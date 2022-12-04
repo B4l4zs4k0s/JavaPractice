@@ -1,9 +1,9 @@
 public class IntroduceYourself {
     public static void main(String[] args) {
-        String name = "Akos";
-        int age = 29;
-        String hobby = "cyber security";
+        printDetails("Anonymous", 29, "cyber security");
+    }
 
+    private static void printDetails(String name, int age, String hobby) {
         System.out.println(name + "\r\n" + age + "\r\n" + hobby);
     }
 }

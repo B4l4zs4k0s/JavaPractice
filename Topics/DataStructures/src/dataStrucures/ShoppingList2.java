@@ -6,7 +6,10 @@ import java.util.Objects;
 
 public class ShoppingList2 {
     public static void main(String[] args) {
+        printAnswers();
+    }
 
+    private static void printAnswers(){
         System.out.println(sumSpending(priceList(), listOfBob()));
         System.out.println(sumSpending(priceList(), listOfAlice()));
         whoBuysMoreFrom("Rice", listOfBob(), listOfAlice());

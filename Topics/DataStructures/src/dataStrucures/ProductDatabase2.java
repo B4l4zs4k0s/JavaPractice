@@ -5,7 +5,10 @@ import java.util.Map;
 
 public class ProductDatabase2 {
     public static void main(String[] args) {
+        printAnswers();
+    }
 
+    private static void printAnswers() {
         productsLessThan201(productsDatabase());
         productsMoreThan150(productsDatabase());
     }
@@ -28,6 +31,7 @@ public class ProductDatabase2 {
             }
         }
     }
+
     private static void productsMoreThan150(HashMap<String, Integer> productsDatabase) {
         for (Map.Entry<String, Integer> entry : productsDatabase.entrySet()) {
             if (entry.getValue() > 150) {

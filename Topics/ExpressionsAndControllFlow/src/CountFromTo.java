@@ -2,12 +2,24 @@ import java.util.Scanner;
 
 public class CountFromTo {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("please write a number");
-        int n1 = scanner.nextInt();
-        System.out.println("please write another number");
-        int n2 = scanner.nextInt();
+        printNumbers(scanNumberOne(), scanNumberTwo());
+    }
 
+    private static int scanNumberOne() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("please write a number one");
+        int n1 = scanner.nextInt();
+        return n1;
+    }
+
+    private static int scanNumberTwo() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("please write a number two");
+        int n2 = scanner.nextInt();
+        return n2;
+    }
+
+    private static void printNumbers(int n1, int n2) {
         if (n2 < n1) {
             System.out.println("The second number should be bigger");
         } else {

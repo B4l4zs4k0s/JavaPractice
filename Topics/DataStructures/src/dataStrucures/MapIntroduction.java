@@ -5,24 +5,67 @@ import java.util.HashMap;
 public class MapIntroduction {
     public static void main(String[] args) {
         HashMap<Integer, String> map = new HashMap<>();
-        System.out.println("Is the map empty: " + map.isEmpty());
+        printIsMapEmpty(map);
+
         map.put(97, "a");
         map.put(98, "b");
         map.put(99, "c");
         map.put(65, "A");
         map.put(66, "B");
         map.put(677, "C");
-        System.out.println(map);
-        System.out.println(map.keySet());
-        System.out.println(map.values());
+
+        printKeySet(map);
+        printEveryValue(map);
+
         map.put(68, "D");
-        System.out.println(map.size());
-        System.out.println(map.get(99));
-        System.out.println(map.remove(97));
-        System.out.println(map.containsKey(100));
+
+        printSizeOfMap(map);
+        printValueByKey(map, 99);
+        removeElementByKey(map, 97);
+        printIsKeyInTheMap(map, 100);
+        clearMap(map);
+        printSizeOfMap(map);
+        printMapContents(map);
+    }
+
+    private static void clearMap(HashMap<Integer, String> map) {
         map.clear();
-        System.out.println(map.size());
+    }
+
+    private static void printIsKeyInTheMap(HashMap<Integer, String> map, int key) {
+        if (map.containsKey(key)) {
+            System.out.println("Key " + key + " exists in the map");
+        } else {
+            System.out.println("Key " + key + " does not exist in them map");
+        }
+    }
+
+    private static void printMapContents(HashMap<Integer, String> map) {
         System.out.println(map);
+    }
+
+    private static void removeElementByKey(HashMap<Integer, String> map, int key) {
+        map.remove(key);
+    }
+
+    private static void printValueByKey(HashMap<Integer, String> map, int key) {
+        System.out.println(map.get(key));
+    }
+
+    private static void printSizeOfMap(HashMap<Integer, String> map) {
+        System.out.println(map.size());
+    }
+
+    private static void printIsMapEmpty(HashMap<Integer, String> map) {
+        System.out.println("Is the map empty: " + map.isEmpty());
+    }
+
+    private static void printKeySet(HashMap<Integer, String> map) {
+        System.out.println(map.keySet());
+    }
+
+    private static void printEveryValue(HashMap<Integer, String> map) {
+        System.out.println(map.values());
     }
 }
 //# Map introduction 1

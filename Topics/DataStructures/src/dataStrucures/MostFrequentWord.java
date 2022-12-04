@@ -8,10 +8,10 @@ import static java.util.Arrays.asList;
 
 public class MostFrequentWord {
     public static void main(String[] args) {
-        mostFrequentWord(sentence());
+        printMostFrequentWord(returnString());
     }
 
-    private static String sentence() {
+    private static String returnString() {
         String sentence = "But then they were married (she felt awful about being pregnant before but\n" +
                 "Harry had been talking about marriage for a while and anyway laughed when\n" +
                 "she told him in early February about missing her period and said Great she\n" +
@@ -27,22 +27,33 @@ public class MostFrequentWord {
         return sentence;
     }
 
-    private static void mostFrequentWord(String sentence) {
+    private static void printMostFrequentWord(String sentence) {
         HashMap<String, Integer> wordsMap = new HashMap<>();
-        asList(sentence.split(" ")).forEach(s -> {
-            if (wordsMap.containsKey(s)) {
-                Integer count = wordsMap.get(s);
-                wordsMap.put(s, count + 1);
+
+        System.out.println(getMostFrequentEntry(mapWordsFromString(wordsMap, sentence)));
+    }
+
+    private static HashMap<String, Integer> mapWordsFromString(HashMap<String, Integer> map, String string) {
+        asList(string.split(" ")).forEach(s -> {
+            if (map.containsKey(s)) {
+                Integer count = map.get(s);
+                map.put(s, count + 1);
             } else {
-                wordsMap.put(s, 1);
+                map.put(s, 1);
             }
         });
-        int maxValue = (Collections.max(wordsMap.values()));
-        for (Map.Entry<String, Integer> entry : wordsMap.entrySet()) {
+        return map;
+    }
+
+    private static String getMostFrequentEntry(HashMap<String, Integer> map) {
+        int maxValue = (Collections.max(map.values()));
+        String mostFrequent = "";
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
             if (entry.getValue().equals(maxValue)) {
-                System.out.println(entry.getKey());
+                mostFrequent = entry.getKey();
             }
         }
+        return mostFrequent;
     }
 }
 //# Most frequent word

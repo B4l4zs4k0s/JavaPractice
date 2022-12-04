@@ -2,8 +2,10 @@ import java.util.Scanner;
 
 public class GuessTheNumber {
     public static void main(String[] args) {
-        int storedNumber = 8;
+        guessTheNumber(returnStoredNumber());
+    }
 
+    private static void guessTheNumber(int storedNumber) {
         System.out.println("please provide a number: ");
         Scanner scanner = new Scanner(System.in);
         int guess = scanner.nextInt();
@@ -17,6 +19,11 @@ public class GuessTheNumber {
             guess = scanner.nextInt();
         }
         System.out.println("you found the stored number");
+    }
+
+    private static int returnStoredNumber() {
+        int storedNumber = 8;
+        return storedNumber;
     }
 }
 

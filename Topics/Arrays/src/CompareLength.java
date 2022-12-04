@@ -3,9 +3,13 @@ public class CompareLength {
         int[] firstArrayOfNumbers = {1, 2, 3};
         int[] secondArrayOfNumbers = {4, 5};
 
-        if (secondArrayOfNumbers.length > firstArrayOfNumbers.length) {
+        compareLengthOfArraysAndPrint(firstArrayOfNumbers,secondArrayOfNumbers);
+    }
+
+    private static void compareLengthOfArraysAndPrint(int[] arrayOne, int[] arrayTwo){
+        if (arrayTwo.length > arrayOne.length) {
             System.out.println("secondArrayOfNumbers is longer");
-        } else if (firstArrayOfNumbers.length > secondArrayOfNumbers.length) {
+        } else if (arrayOne.length > arrayTwo.length) {
             System.out.println("firstArrayOfNumbers is longer");
         }
     }

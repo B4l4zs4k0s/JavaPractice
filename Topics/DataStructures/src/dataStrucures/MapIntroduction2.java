@@ -9,17 +9,45 @@ public class MapIntroduction2 {
         books.put("978-1-60309-459-7", "Lupus ");
         books.put("978-1-60309-444-3", "Red Panda and Moon Bear");
         books.put("978-1-60309-461-0", "The Lab");
-        for (String bookKey : books.keySet()) {
-            System.out.println(books.get(bookKey) + " (ISBN: " + bookKey + ")");
-        }
-        books.remove("978-1-60309-444-3");
-        books.values().remove("The Lab");
+
+        printAllKeyValuePairs(books);
+        removeKeyValuePairFromMapByKey(books, "978-1-60309-444-3");
+        removeKeyValuePairFromMapByValue(books, "The Lab");
+
         books.put("978-1-60309-450-4", "They Called Us Enemy");
         books.put("978-1-60309-453-5", "Why Did We Trust Him?");
-        System.out.println(books.containsValue("478-0-61159-424-8"));
-        System.out.println(books.get("978-1-60309-453-5"));
+
+        printIsMapContainsValue(books, "478-0-61159-424-8");
+        printValueByKey(books, "978-1-60309-453-5");
+    }
+
+    private static void printValueByKey(HashMap<String, String> map, String key) {
+        System.out.println(map.get(key));
+    }
+
+    private static void printIsMapContainsValue(HashMap<String, String> map, String value) {
+        if (map.containsValue(value)) {
+            System.out.println("Tha map contains this value: " + value);
+        } else {
+            System.out.println("The map does not contains this value: " + value);
+        }
+    }
+
+    private static void printAllKeyValuePairs(HashMap<String, String> map) {
+        for (String bookKey : map.keySet()) {
+            System.out.println(map.get(bookKey) + " (ISBN: " + bookKey + ")");
+        }
+    }
+
+    private static void removeKeyValuePairFromMapByKey(HashMap<String, String> map, String key) {
+        map.remove(key);
+    }
+
+    private static void removeKeyValuePairFromMapByValue(HashMap<String, String> map, String value) {
+        map.values().remove(value);
     }
 }
+
 //# Map introduction 2
 //
 //        - Create a map where the keys are strings and the values are strings with the

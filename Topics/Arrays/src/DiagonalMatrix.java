@@ -2,12 +2,20 @@ import java.util.Scanner;
 
 public class DiagonalMatrix {
     public static void main(String[] args) {
+    drawDiagonalMatrix(createMatrix(getMatrixSize()));
+    }
+    private static int getMatrixSize() {
         System.out.println("Enter size of the matrix");
         Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
+    }
 
-        int m = scanner.nextInt();
+    private static int[][] createMatrix(int size){
+        return new int[size][size];
+    }
 
-        int[][] matrix = new int[m][m];
+    private static void drawDiagonalMatrix(int[][] matrix) {
+
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
                 if (i == j) {

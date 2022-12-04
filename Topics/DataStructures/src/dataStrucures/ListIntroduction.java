@@ -7,20 +7,55 @@ public class ListIntroduction {
     public static void main(String[] args) {
         List<String> names = new ArrayList<>();
 
-        System.out.println(names.size());
-        System.out.println("=========================================");
-        names.add("William");
-        System.out.println("Is the list empty: " + names.isEmpty());
-        System.out.println("=========================================");
-        names.add("John");
-        names.add("Amanda");
-        System.out.println(names.size());
-        System.out.println("=========================================");
-        System.out.println(names.get(2));
-        System.out.println("=========================================");
+        printListSize(names);
+        printGapForConsoleVisibility();
+        addNameToList(names, "William");
+        printIfListIsEmpty(names);
+        printGapForConsoleVisibility();
+        addNameToList(names, "John");
+        addNameToList(names, "Amanda");
+        printListSize(names);
+        printGapForConsoleVisibility();
+        printElementByIndex(names, 2);
+        printGapForConsoleVisibility();
+        printNames(names);
+        removeElementByIndex(names, 1);
+        printListInReverse(names);
+    }
 
-        for (int i = 0; i < names.size(); i++) {
-            System.out.println(names.get(i));
+    private static void addNameToList(List<String> list, String name) {
+        list.add(name);
+    }
+
+    private static void printNames(List<String> list) {
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+    }
+
+    private static void printGapForConsoleVisibility() {
+        System.out.println("========================");
+    }
+
+    private static void printListSize(List<String> list) {
+        System.out.println(list.size());
+    }
+
+    private static void printElementByIndex(List<String> list, int index) {
+        System.out.println(list.get(index));
+    }
+
+    private static void printIfListIsEmpty(List<String> list) {
+        System.out.println("Is the list empty: " + list.isEmpty());
+    }
+
+    private static void removeElementByIndex(List<String> list, int index) {
+        list.remove(index);
+    }
+
+    private static void printListInReverse(List<String> list) {
+        for (int i = list.size() - 1; i >= 0; i--) {
+            System.out.println(list.get(i));
         }
     }
 }

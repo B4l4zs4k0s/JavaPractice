@@ -1,9 +1,9 @@
 public class MultiplicationTable {
     public static void main(String[] args) {
-        print(15);
+        printMultiplicationTable(15);
     }
 
-    public static void print(int number) {
+    private static void printMultiplicationTable(int number) {
         for (int i = 1; i <= 10; i++) {
             System.out.println(i + " * " + number + " = " + i * number);
         }

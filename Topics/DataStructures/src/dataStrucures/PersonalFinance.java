@@ -1,27 +1,46 @@
 package dataStrucures;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class PersonalFinance {
     public static void main(String[] args) {
-        List<Integer> expenses = new ArrayList<>();
-        expenses.add(500);
-        expenses.add(1000);
-        expenses.add(1250);
-        expenses.add(175);
-        expenses.add(800);
-        expenses.add(120);
+        printSumMaxMinAvgValuesOfList(returnList());
+    }
 
+    private static List<Integer> returnList() {
+        List<Integer> expenses = new ArrayList<>(Arrays.asList(500, 1000, 1250, 175, 800, 120));
+        return expenses;
+    }
+
+    private static void printSumMaxMinAvgValuesOfList(List<Integer> list) {
+        System.out.println(returnSumResultOfElementsOfList(list));
+        System.out.println(returnMostExpensiveItemOfList(list));
+        System.out.println(returnLeastExpensiveItemOfList(list));
+        System.out.println(returnAverageSpendingByList(list, returnSumResultOfElementsOfList(list)));
+
+    }
+
+    private static double returnSumResultOfElementsOfList(List<Integer> list) {
         double sum = 0;
-        for (int n : expenses) {
+        for (int n : list) {
             sum += n;
         }
-        System.out.println(sum);
-        System.out.println(Collections.max(expenses));
-        System.out.println(Collections.min(expenses));
-        System.out.println(sum / expenses.size());
+        return sum;
+    }
+
+    private static double returnMostExpensiveItemOfList(List<Integer> list) {
+        return Collections.max(list);
+    }
+
+    private static double returnLeastExpensiveItemOfList(List<Integer> list) {
+        return Collections.min(list);
+    }
+
+    private static double returnAverageSpendingByList(List<Integer> list, double sum) {
+        return sum / list.size();
     }
 }
 //# Personal finance

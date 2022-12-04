@@ -1,17 +1,30 @@
 public class Colors {
     public static void main(String[] args) {
-        String[][] colors = {
+        String[][] matrix = {
                 {"lime", "forest green", "olive", "pale green", "spring green"},
                 {"orange red", "red", "tomato"},
                 {"orchid", "violet", "pink", "hot pink"}
         };
+        printMatrix(matrix);
+    }
 
-        for (int i = 0; i < colors.length; i++) {
-            for (int j = 0; j < colors[i].length; j++) {
-                System.out.print(colors[i][j] + " ");
-            }
-            System.out.println();
+    private static void printMatrix(String[][] matrix) {
+        for (String[] lineOfColors : matrix) {
+            System.out.println(buildStringWithComa(lineOfColors));
         }
+    }
+
+    private static String buildStringWithComa(String[] lineOfColors) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String color : lineOfColors) {
+            stringBuilder.append(color).append(", ");
+        }
+        removeLastComma(stringBuilder);
+        return stringBuilder.toString();
+    }
+
+    private static void removeLastComma(StringBuilder stringBuilder) {
+        stringBuilder.delete(stringBuilder.length() - 2, stringBuilder.length() - 1);
     }
 }
 // - Create a two-dimensional array (of Strings)

@@ -1,13 +1,14 @@
 public class DrawSquare {
     public static void main(String[] args) {
-    drawSquare(5);
+        drawSquare(5);
     }
-    public static void drawSquare(int height){
+
+    public static void drawSquare(int height) {
         for (int i = 1; i <= height; i++) {
             for (int j = 1; j <= height; j++) {
-                if(j==1 || j==height || i==1 || i==height){
+                if (j == 1 || j == height || i == 1 || i == height) {
                     System.out.print("%");
-                }else{
+                } else {
                     System.out.print(" ");
                 }
             }

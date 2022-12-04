@@ -2,10 +2,13 @@ public class SumAll {
     public static void main(String[] args) {
 
         int[] numbers = {3, 4, 5, 6, 7};
-        int sum = 0;
+        sumArrayAndPrint(numbers);
+    }
 
-        for (int i = 0; i < numbers.length; i++) {
-            sum = sum + numbers[i];
+    private static void sumArrayAndPrint(int[] numbers) {
+        int sum = 0;
+        for (int number : numbers) {
+            sum += number;
         }
         System.out.println(sum);
     }

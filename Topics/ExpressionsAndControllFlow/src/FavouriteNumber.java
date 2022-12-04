@@ -1,7 +1,10 @@
 public class FavouriteNumber {
     public static void main(String[] args) {
-        int favouriteNumber = 4;
-        System.out.println("My favorite number is: " + favouriteNumber);
+        printFavoriteNumber(1234);
+    }
+
+    private static void printFavoriteNumber(int favoriteNumber) {
+        System.out.println("My favorite number is: " + favoriteNumber);
     }
 }
 // Store your favorite number in a variable (as a number)

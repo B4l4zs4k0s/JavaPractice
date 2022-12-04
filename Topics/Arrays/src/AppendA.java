@@ -1,11 +1,18 @@
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class AppendA {
     public static void main(String[] args) {
         String[] animals = {"koal", "pand", "zebr", "anacond", "bo", "chinchill", "cobr",
                 "gorill", "hyen", "hydr", "iguan", "impal", "pum", "tarantul",
                 "piranh"};
+        append(animals, "a");
+        System.out.println(Arrays.toString(animals));
+    }
 
-        for (int i = 0; i < animals.length; i++) {
-            System.out.println(animals[i] + "a");
+    private static void append(String[] array, String str) {
+        for (int i = 0; i < array.length - 1; i++) {
+            array[i] = array[i] + str;
         }
     }
 }

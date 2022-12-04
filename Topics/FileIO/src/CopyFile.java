@@ -5,7 +5,6 @@ import java.nio.file.Paths;
 
 public class CopyFile {
     public static void main(String[] args) {
-
         System.out.println(copyFile("my-file.txt", "copied-text.txt"));
     }
 

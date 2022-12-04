@@ -1,11 +1,14 @@
 public class SwapElements {
     public static void main(String[] args) {
         String[] orders = {"first", "second", "third"};
-        String swap = orders[2];
-        orders[2] = orders[0];
-        orders[0] = swap;
-        for (int i = 0; i < orders.length; i++) {
-            System.out.print(orders[i] + " ");
+       swapOrderByIndexAndPrint(orders,2,0);
+    }
+    private static void swapOrderByIndexAndPrint(String[] array, int index, int otherIndex){
+        String swap = array[index];
+        array[index] = array[otherIndex];
+        array[otherIndex] = swap;
+        for (String s : array) {
+            System.out.print(s + " ");
         }
     }
 }

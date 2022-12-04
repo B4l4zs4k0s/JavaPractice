@@ -7,6 +7,10 @@ import java.util.Map;
 
 public class ProductDatabase {
     public static void main(String[] args) {
+        printAnswers();
+    }
+
+    private static void printAnswers() {
         howMuchIsTheFish(productsDatabase());
         mostExpensiveProduct(productsDatabase());
         averagePrice(productsDatabase());
@@ -74,6 +78,7 @@ public class ProductDatabase {
             System.out.println("no");
         }
     }
+
     private static void cheapestProduct(HashMap<String, Integer> productsDatabase) {
         int minValue = (Collections.min(productsDatabase.values()));
         for (Map.Entry<String, Integer> entry : productsDatabase.entrySet()) {

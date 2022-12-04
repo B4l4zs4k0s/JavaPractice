@@ -5,6 +5,10 @@ import java.util.Map;
 
 public class TelephoneBook {
     public static void main(String[] args) {
+        printAnswers();
+    }
+
+    private static void printAnswers(){
         printJohnsNumber();
         whoseIsThisNumber();
         findIfNumberExist();

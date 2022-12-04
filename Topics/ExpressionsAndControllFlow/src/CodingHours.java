@@ -1,12 +1,15 @@
 public class CodingHours {
     public static void main(String[] args) {
-        int averageCoding, weeksLong, workDaysAWeek;
-        averageCoding = 6;
-        weeksLong = 17;
-        workDaysAWeek = 5;
+        printAverage(6, 17, 5);
+        printPercentageOfCodingHours(52, 6, 17, 5);
+    }
 
-        System.out.println("Average attendee codes: " + (averageCoding * weeksLong * workDaysAWeek));
-        System.out.println("Print percentage of coding hours: " + ((52f / (averageCoding * weeksLong * workDaysAWeek)) * 100 + "%"));
+    private static void printAverage(int avgCodingHours, int weeksLong, int workDaysAWeek) {
+        System.out.println("Average attendee codes: " + (avgCodingHours * weeksLong * workDaysAWeek) + " ");
+    }
+
+    private static void printPercentageOfCodingHours(float workHoursWeekly, int avgCodingHours, int weeksLong, int workDaysAWeek) {
+        System.out.println("Print percentage of coding hours: " + ((workHoursWeekly / (avgCodingHours * weeksLong * workDaysAWeek)) * 100 + "%"));
     }
 }
 // On average, I code 6 hours daily

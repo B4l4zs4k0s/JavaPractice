@@ -4,7 +4,12 @@ public class DefineBasicInfo {
         int age = 29;
         double height = 1.81;
         boolean married = false;
-        System.out.println(name + "\r\n" + age + "\r\n" + height +"\r\n" + married);
+
+        printValues(name, age, height, married);
+    }
+
+    private static void printValues(String name, int age, double height, boolean married) {
+        System.out.println(name + "\r\n" + age + "\r\n" + height + "\r\n" + married);
     }
 }
 // Define several things as a variable then print their values

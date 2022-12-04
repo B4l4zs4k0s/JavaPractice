@@ -2,11 +2,19 @@ import java.util.Scanner;
 
 public class ParametricAverage {
     public static void main(String[] args) {
-        System.out.println("How many numbers would you like to enter: ");
-
-        parametricAverage();
+        startParametricAverage();
     }
-    public static void parametricAverage() {
+
+    private static void startParametricAverage() {
+        printHowManyYouWant();
+        printParametricAverage();
+    }
+
+    private static void printHowManyYouWant() {
+        System.out.println("How many numbers would you like to enter: ");
+    }
+
+    private static void printParametricAverage() {
         Scanner scanner = new Scanner(System.in);
         double num = scanner.nextDouble();
         double sum = 0;
